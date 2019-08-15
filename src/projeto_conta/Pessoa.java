@@ -5,15 +5,24 @@ package projeto_conta;
  * @author jonasdhein
  */
 public class Pessoa {
-    
+    //com cheque
     private int codigo;
     private String nome;
     private String endereco;
     private String telefone;
-    private double valorConta;
+    private double valorConta;    //500
+    private double chequeEspecial;   //1000
 
     public int getCodigo() {
         return codigo;
+    }
+
+    public double getChequeEspecial() {
+        return chequeEspecial;
+    }
+
+    public void setChequeEspecial(double chequeEspecial) {
+        this.chequeEspecial = chequeEspecial;
     }
 
     public void setCodigo(int codigo) {
@@ -53,7 +62,7 @@ public class Pessoa {
     }
     
     public boolean credito(double valorTransferencia){
-        if(valorTransferencia <= this.valorConta){
+        if(valorTransferencia <= this.valorConta + this.chequeEspecial){
             this.valorConta -= valorTransferencia;
             System.out.println("Transferência realizada.");
             return true;
@@ -69,7 +78,7 @@ public class Pessoa {
     
     @Override
     public String toString(){
-        return "Nome: " + nome + "\nSaldo: " + valorConta;
+        return "Nome: " + nome + "\nLimite: " + chequeEspecial + "\nSaldo: " +  valorConta;
     }
     
 }
