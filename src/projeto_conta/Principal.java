@@ -20,10 +20,12 @@ public class Principal {
         pessoa1.setEndereco("Lajeado");
         pessoa1.setTelefone("190");
         pessoa1.setValorConta(500);
+        pessoa1.setChequeEspecial(1000);
         
         pessoa2.setCodigo(2);
         pessoa2.setNome("João");
         pessoa2.setValorConta(1000);
+        pessoa2.setChequeEspecial(1000);
         
         System.out.println("Saldo Inicial:");
         System.out.println(pessoa1);
@@ -31,7 +33,8 @@ public class Principal {
         System.out.println(pessoa2);
         System.out.println("-------------------");
         
-        double valorTransferencia = 100;
+        
+        double valorTransferencia = 600;
         System.out.println("Valor da Transferência: R$ " + valorTransferencia);
         
         if(pessoa1.credito(valorTransferencia) == true){
