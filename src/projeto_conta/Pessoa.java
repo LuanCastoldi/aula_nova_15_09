@@ -5,7 +5,7 @@ package projeto_conta;
  * @author jonasdhein
  */
 public class Pessoa {
-    //com cheque
+    //com  che
     private int codigo;
     private String nome;
     private String endereco;
