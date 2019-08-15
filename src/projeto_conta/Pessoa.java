@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package projeto_conta;
 
 /**
  *
- * @author luan.castoldi
+ * @author jonasdhein
  */
 public class Pessoa {
     
@@ -16,16 +11,6 @@ public class Pessoa {
     private String endereco;
     private String telefone;
     private double valorConta;
-    private double valorAtualizado;
-
-    public double getValorAtualizado() {
-        return valorAtualizado;
-    }
-
-    public void setValorAtualizado(double valorAtualizado) {
-        this.valorAtualizado = valorAtualizado;
-    }
-
 
     public int getCodigo() {
         return codigo;
@@ -67,20 +52,24 @@ public class Pessoa {
         this.valorConta = valorConta;
     }
     
+    public boolean credito(double valorTransferencia){
+        if(valorTransferencia <= this.valorConta){
+            this.valorConta -= valorTransferencia;
+            System.out.println("Transferência realizada.");
+            return true;
+        }else{
+            System.out.println("Transferência não realizada.");
+            return false;
+        }
+    }
     
+    public void debito(double valor){
+        this.valorConta += valor;
+    }
     
     @Override
     public String toString(){
-        return 
-                "Nome = " + this.nome + 
-                /*"\nEndereço = " + this.endereco + 
-                "\nTelefone = " + this.telefone + */
-                "\nValor = " + this.valorConta + 
-                //"\nValor Atualizado = " + this.valorAtualizado + 
-                "\n===========================";
+        return "Nome: " + nome + "\nSaldo: " + valorConta;
     }
     
-    boolean setCodigo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
