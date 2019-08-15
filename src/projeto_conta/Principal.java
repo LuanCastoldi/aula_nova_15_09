@@ -4,7 +4,7 @@ package projeto_conta;
 import java.util.Random;
 
 /*
-   autor: Jonas Dhein
+   autor: Luan
 */
 
 public class Principal {
