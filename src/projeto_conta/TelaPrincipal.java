@@ -11,38 +11,34 @@ package projeto_conta;
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
-    
-       Pessoa pessoa1;
-        Pessoa pessoa2;
+    Pessoa pessoa1;
+    Pessoa pessoa2;
+
     /**
      * Creates new form TelaPrincipal
      */
     public TelaPrincipal() {
         initComponents();
-        
-        
-        Pessoa pessoa1 = new Pessoa();
-        Pessoa pessoa2 = new Pessoa();
-     
-        
+
+        pessoa1 = new Pessoa();
+        pessoa2 = new Pessoa();
+
         pessoa1.setCodigo(1);
         pessoa1.setNome("Juca");
         pessoa1.setEndereco("Lajeado");
         pessoa1.setTelefone("190");
         pessoa1.setValorConta(500);
         pessoa1.setChequeEspecial(100);
-        
+
         pessoa2.setCodigo(2);
         pessoa2.setNome("João");
         pessoa2.setValorConta(500);
         pessoa2.setChequeEspecial(100);
-        
-        
+
         lblNome1.setText(pessoa1.getNome());
         lblValor1.setText(String.valueOf(pessoa1.getValorConta()));
         lblCheque1.setText(String.valueOf(pessoa1.getChequeEspecial()));
-        
-        
+
         lblNome2.setText(pessoa2.getNome());
         lblValor2.setText(String.valueOf(pessoa2.getValorConta()));
         lblCheque2.setText(String.valueOf(pessoa2.getChequeEspecial()));
@@ -161,52 +157,43 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTransfere1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransfere1ActionPerformed
-    try{
-        
-      double transf = Double.parseDouble(txtCampo1.getText());
-      if(pessoa1.credito(transf) == true){
-      pessoa2.debito(transf);
-      }
-        lblValor1.setText(String.valueOf(pessoa1.getValorConta()));
-        lblValor2.setText(String.valueOf(pessoa2.getValorConta()));
-        txtCampo1.setText("0");
-        
-    }catch(Exception ex){
-        System.out.println("Erro" + ex.getMessage());
-        
-     
-        
-    }
-      
-        
+        try {
+
+            double transf = Double.parseDouble(txtCampo1.getText());
+            if (pessoa1.credito(transf) == true) {
+                pessoa2.debito(transf);
+            }
+            lblValor1.setText(String.valueOf(pessoa1.getValorConta()));
+            lblValor2.setText(String.valueOf(pessoa2.getValorConta()));
+            txtCampo1.setText("0");
+
+        } catch (Exception ex) {
+            System.out.println("Erro" + ex.getMessage());
+
+        }
+
+
     }//GEN-LAST:event_btnTransfere1ActionPerformed
 
     private void txtCampo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCampo2ActionPerformed
-        
-        try{
-   
-      double transf = Double.parseDouble(txtCampo2.getText());
-      if(pessoa2.credito(transf) == true){
-      pessoa1.debito(transf);
-      }
-        lblValor2.setText(String.valueOf(pessoa2.getValorConta()));
-        lblValor1.setText(String.valueOf(pessoa1.getValorConta()));
-        txtCampo2.setText("0");
-        
-    }catch(Exception ex){
-        System.out.println("Erro" + ex.getMessage());
-        
-     
-        
-    }
-      
-        
-                                             
-        
+
     }//GEN-LAST:event_txtCampo2ActionPerformed
 
     private void btnTransfere2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransfere2ActionPerformed
-        // TODO add your handling code here:
+        try {
+
+            double transf = Double.parseDouble(txtCampo2.getText());
+            if (pessoa2.credito(transf) == true) {
+                pessoa1.debito(transf);
+            }
+            lblValor1.setText(String.valueOf(pessoa1.getValorConta()));
+            lblValor2.setText(String.valueOf(pessoa2.getValorConta()));
+            txtCampo2.setText("0");
+
+        } catch (Exception ex) {
+            System.out.println("Erro" + ex.getMessage());
+
+        }
     }//GEN-LAST:event_btnTransfere2ActionPerformed
 
     private void txtCampo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCampo1ActionPerformed
@@ -219,8 +206,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        
-       
+
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 

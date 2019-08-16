@@ -9,12 +9,14 @@ import java.util.Random;
 
 public class Principal {
 
+    
+     
     //método de inicialização da classe
     public static void main(String[] args) {
         
     
-       Pessoa pessoa1 = new Pessoa();
-        Pessoa pessoa2 = new Pessoa();
+        Pessoa pessoa1 = new Pessoa();
+        Pessoa  pessoa2 = new Pessoa();
         
         pessoa1.setCodigo(1);
         pessoa1.setNome("Juca");
